@@ -45,6 +45,7 @@ contract VolcanoCoin {
 
     function transfer(uint256 amount, address recipient) public {
         require(balances[msg.sender] > amount, "Not enough VolcanoCoin to send");
+        require(amount > 0, "Amount must be greater than 0");
 
         balances[msg.sender] = balances[msg.sender] - amount;
         balances[recipient] = balances[recipient] + amount;
