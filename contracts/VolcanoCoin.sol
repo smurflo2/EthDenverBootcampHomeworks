@@ -6,7 +6,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
  * @title VolcanoCoin
- * @dev homework 4 things
+ * @dev homework things
  * @custom:dev-run-script ./scripts/deploy_with_ethers.ts
  */
 contract VolcanoCoin is Ownable {

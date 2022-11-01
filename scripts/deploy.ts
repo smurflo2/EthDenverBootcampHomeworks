@@ -7,10 +7,13 @@ async function main() {
     const balance = await deployer.getBalance();
     console.log(`Account Balance: ${balance.toString()}`);
 
-    const DummyContract = await ethers.getContractFactory("DummyContract");
-    const dummyContract = DummyContract.deploy();
+    /* const DummyContract = await ethers.getContractFactory("DummyContract");
+    const dummyContract = DummyContract.deploy(); */
 
-    console.log("Token deployed to:", dummyContract.address);
+    const VolcanoCoinDeployer = await ethers.getContractFactory("VolcanoCoin");
+    const volcanoCoin = VolcanoCoinDeployer.deploy();
+
+    console.log("Token deployed to:", volcanoCoin.address);
 }
 
 /*

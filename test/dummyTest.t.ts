@@ -1,6 +1,7 @@
 import { expect } from 'chai';
 import { ethers } from 'hardhat';
 
+/*
 describe("DummyContract", function() {
     let DummyContract, dummyContract, owner, addr1, addr2;
 
@@ -25,4 +26,4 @@ describe("DummyContract", function() {
         })
     })
 })
-
+*/
