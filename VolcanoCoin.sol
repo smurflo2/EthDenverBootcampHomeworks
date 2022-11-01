@@ -2,15 +2,16 @@
 
 pragma solidity >=0.8.0;
 
+import "@openzeppelin/contracts/access/Ownable.sol";
+
 /**
  * @title VolcanoCoin
  * @dev homework 4 things
  * @custom:dev-run-script ./scripts/deploy_with_ethers.ts
  */
-contract VolcanoCoin {
+contract VolcanoCoin is Ownable {
 
     uint256 supply = 10000;
-    address immutable owner;
     mapping(address => uint256) public balances;
     // 14: the other way is to create a public function for balances
 
@@ -23,15 +24,8 @@ contract VolcanoCoin {
     event supplyIncreaseEvent(uint256 newSupply);
     event transferEvent(uint256 amount, address recipient);
 
-    modifier onlyOwner {
-        if (msg.sender == owner) {
-            _;
-        }
-    }
-
     constructor() {
-        owner = msg.sender;
-        balances[owner] = supply;
+        balances[msg.sender] = supply;
     }
 
     function getSupply() public view returns (uint256) {
