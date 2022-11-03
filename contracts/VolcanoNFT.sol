@@ -5,6 +5,10 @@ pragma solidity >=0.8.0;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
+interface IVolcanoCoin {
+    function transfer(uint, address) external;
+}
+
 /**
  * @title VolcanoNFT
  * @dev homework things
@@ -16,11 +20,27 @@ contract VolcanoNFT is ERC721("VolcanoNFT", "VNFT"), Ownable {
 
     constructor() {}
 
-    function mint(address to) public onlyOwner {
+    function mint(address to) private {
         _safeMint(to, mintId);
         mintId += 1;
     }
 
+    function ownerMint(address to) public onlyOwner {
+        mint(to);
+    }
+
+    function mintWithEth(address to) public payable {
+        require(msg.value >= 0.01 ether, "Mint price is 0.01 ETH");
+        mint(to);
+    }
+
+    function mintWithVolcanoCoin(address to, uint amount, address volcanoCoinAddress) public {
+        require(amount >= 1000, "Minimum of 1000 Volcano Coin required");
+
+        IVolcanoCoin(volcanoCoinAddress).transfer(amount, owner());
+
+        mint(to);
+    }
 
 
     /* uint256 supply = 10000;
