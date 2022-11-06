@@ -21,6 +21,9 @@ Init: 4653697
 3410684
 3330103
 3319355
+3104785
+2698341
+2711507
 
 
 Strats:
@@ -33,3 +36,6 @@ Lots of improvements to addToWhitelist. Just need to set _tier to 3 if it's > 3.
 Calldata instead of memory for params
 Most things about ImportantStruct (and whitelistStruct or w/e) can be removed. Some of it's props can be reduced to uint8
 Constants contract can be totally removed. Things related to getTradingHistory can be simplified.
+Remove is Ownable
+Rework checkForOwnerOrAdmin, remove extraneous revert call
+uint8 for checkForAdmin iterator
