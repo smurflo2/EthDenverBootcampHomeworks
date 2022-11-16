@@ -98,20 +98,20 @@ describe("VolcanoNFT", function() {
                 })
             ).to.not.be.reverted;
         });
-        it("Should be minted for 1000 VolcanoCoin", async () => {
-            await deployVolcanoCoin();
-
-            await volcanoCoin.transfer(2000, addr1.address);
-            console.log("🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥");
-            console.log("owner balance", await volcanoCoin.balances(owner.address));
-            console.log("addr1 balance", await volcanoCoin.balances(addr1.address));
-
-            await volcanoNFT
-                .connect(addr1)
-                .mintWithVolcanoCoin(addr1.address, 1001, volcanoCoin.address);
-            console.log("🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥");
-            console.log("owner balance", await volcanoCoin.balances(owner.address));
-            console.log("addr1 balance", await volcanoCoin.balances(addr1.address));
-        });
+        /* it("Should be minted for 1000 VolcanoCoin", async () => {
+                await deployVolcanoCoin();
+    
+                await volcanoCoin.transfer(2000, addr1.address);
+                console.log("🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥");
+                console.log("owner balance", await volcanoCoin.balances(owner.address));
+                console.log("addr1 balance", await volcanoCoin.balances(addr1.address));
+    
+                await volcanoNFT
+                    .connect(addr1)
+                    .mintWithVolcanoCoin(addr1.address, 1001, volcanoCoin.address);
+                console.log("🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥");
+                console.log("owner balance", await volcanoCoin.balances(owner.address));
+                console.log("addr1 balance", await volcanoCoin.balances(addr1.address));
+            }); */
     });
 });
