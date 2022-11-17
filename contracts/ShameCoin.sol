@@ -19,9 +19,8 @@ contract ShameCoin is ERC20("ShameCoin", "SHAME") {
             _;
         } 
         else {
-            revert("You're not the admin :P")
+            revert("You're not the admin :P");
         }
-
     }
 
     constructor() {

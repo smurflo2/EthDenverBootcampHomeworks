@@ -23,8 +23,8 @@ describe("ShameCoin", function() {
         });
 
         /* it("test", async () => {
-                                            expect(await shameCoin.balanceOf(admin.address)).to.equal(10);
-                                        }); */
+                                                expect(await shameCoin.balanceOf(admin.address)).to.equal(10);
+                                            }); */
     });
 
     describe("Transfers", () => {
@@ -42,6 +42,19 @@ describe("ShameCoin", function() {
             expect(await shameCoin.balanceOf(addr1.address)).to.equal(0);
             await shameCoin.connect(addr1).transfer(addr2.address, 1);
             expect(await shameCoin.balanceOf(addr1.address)).to.equal(1);
+        });
+    });
+
+    describe("Admin burn", () => {
+        it("", async () => {
+            expect(await shameCoin.balanceOf(addr1.address)).to.equal(0);
+            await shameCoin.transfer(addr1.address, 1);
+            expect(await shameCoin.balanceOf(addr1.address)).to.equal(1);
+            await shameCoin.transfer(addr1.address, 1);
+            expect(await shameCoin.balanceOf(addr1.address)).to.equal(2);
+
+            await shameCoin.transfer(addr2.address, 1);
+            expect(await shameCoin.balanceOf(addr2.address)).to.equal(1);
         });
     });
 });
