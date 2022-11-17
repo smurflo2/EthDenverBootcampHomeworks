@@ -6,6 +6,9 @@ const config: HardhatUserConfig = {
     networks: {
         hardhat: {
             chainId: 31337,
+            forking: {
+                url: "https://mainnet.infura.io/v3/ffe44e4700ca40ed9193f2dd9540eb28",
+            },
         },
     },
 };
