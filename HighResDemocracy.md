@@ -25,6 +25,7 @@ Here, proposed laws would be surfaced for discussion. Arguments can be made for 
 Citizens could even propose laws or amendments. Lawmakers could then see these laws according to how much support they have.
 
 Ideally, all of this would be gated so that you could only provide input on things that would actually affect you. e.g. you could only vote on things for your own city/state/country. Although I could see there being reasons for exceptions, perhaps the voting cost is just higher if you're out of the target area.
+UPDATE 1: okay check this out - what if your location was a verifiable credential!? law NFTs would have a location/affected region field. on the frontend we could display a badge + give higher sort priority to people who are verifiably affected, thereby giving people that are actually affected a louder voice in the process!
 
 Eventually, this could also help inform voters in elections and increase accountability for lawmakers. For example, if I've actively been giving input on laws, there could be a tool that shows how closely a candidate's voting record matches up with the laws that I was actively for or against.
 
